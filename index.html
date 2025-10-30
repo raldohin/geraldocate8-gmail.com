@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +6,6 @@
   <title>Gerald Ocate | IT Specialist</title>
 
   <!-- Font Awesome Icons -->
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -92,19 +90,24 @@
       margin-bottom: 20px;
     }
 
+    /* --- ABOUT SECTION --- */
     .about {
       text-align: center;
+      position: relative;
     }
 
     .about img {
+      display: block;
+      margin: 0 auto 25px auto;
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      margin-bottom: 20px;
       border: 3px solid #00bfff;
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
       animation: zoomIn 1s ease;
     }
 
+    /* --- SKILLS --- */
     .skills {
       text-align: center;
     }
@@ -137,6 +140,7 @@
       color: #00bfff;
     }
 
+    /* --- PROJECTS --- */
     .projects {
       text-align: center;
     }
@@ -166,6 +170,7 @@
       transform: scale(1.05);
     }
 
+    /* --- CONTACT --- */
     .contact {
       text-align: center;
     }
@@ -195,6 +200,7 @@
       text-shadow: 0 0 15px currentColor;
     }
 
+    /* --- FOOTER --- */
     footer {
       background: #222;
       text-align: center;
@@ -210,6 +216,7 @@
       text-decoration: none;
     }
 
+    /* --- ANIMATIONS --- */
     @keyframes typing {
       from { width: 0; }
       to { width: 100%; }
@@ -234,7 +241,6 @@
       to { transform: scale(1); opacity: 1; }
     }
   </style>
-
 </head>
 
 <body>
@@ -250,12 +256,14 @@
     </nav>
   </header>
 
+  <!-- ABOUT SECTION -->
   <section id="about" class="about">
     <img src="https://github.com/raldohin/geraldocate8-gmail.com/blob/main/37b377e8-1708-4585-a6b0-855df82d7d3d.jpg?raw=true" alt="Profile Photo">
     <h2>About Me</h2>
     <p>Hello! I’m <strong>Gerald Ocate</strong>, an IT Specialist passionate about technology, system optimization, and innovative solutions. I enjoy building efficient systems and helping people get the most out of their digital tools.</p>
   </section>
 
+  <!-- SKILLS -->
   <section id="skills" class="skills">
     <h2>Skills</h2>
     <ul>
@@ -267,42 +275,38 @@
     </ul>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects" class="projects">
     <h2>Projects</h2>
 
-```
-<div class="card">
-  <h3>Network Monitoring Dashboard</h3>
-  <p>Built a dashboard using Grafana and Prometheus to monitor system uptime, server load, and network traffic.</p>
-  <a href="https://grafana.com/grafana/dashboards" target="_blank">
-    <img src="Screenshot 2025-10-31 005028.png" alt="Network Monitoring Dashboard">
-  </a>
-</div>
+    <div class="card">
+      <h3>Network Monitoring Dashboard</h3>
+      <p>Built a dashboard using Grafana and Prometheus to monitor system uptime, server load, and network traffic.</p>
+      <a href="https://grafana.com/grafana/dashboards" target="_blank">
+        <img src="Screenshot 2025-10-31 005028.png" alt="Network Monitoring Dashboard">
+      </a>
+    </div>
 
-<div class="card">
-  <h3>Personal Portfolio Website</h3>
-  <p>Built a responsive and animated personal portfolio showcasing IT expertise, projects, and contact info.</p>
-  <a href="https://github.com/raldohin" target="_blank">
-    <img src="Screenshot 2025-10-31 005708.png" alt="Personal Portfolio Website">
-  </a>
-</div>
-```
-
+    <div class="card">
+      <h3>Personal Portfolio Website</h3>
+      <p>Built a responsive and animated personal portfolio showcasing IT expertise, projects, and contact info.</p>
+      <a href="https://github.com/raldohin" target="_blank">
+        <img src="Screenshot 2025-10-31 005708.png" alt="Personal Portfolio Website">
+      </a>
+    </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact" class="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:geraldocate8@gmail.com">geraldocate8@gmail.com</a></p>
     <p>LinkedIn: <a href="#">linkedin.com/in/geraldocate</a></p>
     <p>Phone: +63 9935345069</p>
 
-```
-<div class="social-icons">
-  <a href="https://www.tiktok.com/@geekpump" target="_blank" title="TikTok" class="tiktok"><i class="fab fa-tiktok"></i></a>
-  <a href="https://t.me/geekpum" target="_blank" title="Telegram" class="telegram"><i class="fab fa-telegram"></i></a>
-</div>
-```
-
+    <div class="social-icons">
+      <a href="https://www.tiktok.com/@geekpump" target="_blank" title="TikTok" class="tiktok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://t.me/geekpum" target="_blank" title="Telegram" class="telegram"><i class="fab fa-telegram"></i></a>
+    </div>
   </section>
 
   <footer>
@@ -325,7 +329,3 @@
 
 </body>
 </html>
-
-
-
-
