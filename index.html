@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerald Ocate | IT Specialist</title>
 
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -23,36 +26,39 @@
             overflow-x: hidden;
         }
 
+        /* --- HEADER & NAV --- */
         header {
             background: #222;
-            padding: 20px 0;
+            padding: 30px 0;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 1s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         header h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #00bfff;
-            text-shadow: 0 0 8px #00bfff, 0 0 15px #00bfff;
+            text-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
             overflow: hidden;
             border-right: 3px solid #00bfff;
             white-space: nowrap;
             width: 0;
-            animation: typing 2s steps(20, end) forwards, blink 0.7s step-end infinite alternate;
             margin: 0 auto;
+            animation: typing 2.5s steps(20, end) forwards, blink 0.7s step-end infinite alternate;
         }
 
         header p {
-            color: #ccc;
-            font-size: 1rem;
-            margin-top: 10px;
+            color: #aaa;
+            font-size: 1.1rem;
+            margin-top: 5px;
             opacity: 0;
             animation: fadeIn 1.5s ease 2s forwards;
         }
 
         nav {
-            margin-top: 15px;
+            margin-top: 20px;
             opacity: 0;
             animation: fadeInUp 1.2s ease 2.5s forwards;
         }
@@ -60,8 +66,11 @@
         nav a {
             color: #00bfff;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 15px;
+            font-weight: 500;
             transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
         nav a:hover {
@@ -69,13 +78,14 @@
             text-shadow: 0 0 8px #00bfff;
         }
 
+        /* --- SECTIONS --- */
         section {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 25px;
             opacity: 0;
             transform: translateY(40px);
-            transition: all 0.8s ease;
+            transition: all 0.8s ease-out;
         }
 
         section.visible {
@@ -85,132 +95,187 @@
 
         h2 {
             color: #00bfff;
-            border-bottom: 2px solid #00bfff;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        /* --- ABOUT SECTION --- */
-        .about {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
             text-align: center;
             position: relative;
         }
 
-        .about img {
+        h2::after {
+            content: '';
             display: block;
-            margin: 0 auto 25px auto;
-            width: 160px;
-            height: 160px;
+            width: 50px;
+            height: 3px;
+            background: #00bfff;
+            margin: 10px auto;
+        }
+
+        /* --- ABOUT --- */
+        .about {
+            text-align: center;
+        }
+
+        .about img {
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            border: 3px solid #00bfff;
-            box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
-            animation: zoomIn 1s ease;
+            border: 4px solid #00bfff;
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+            object-fit: cover;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+            color: #ccc;
+        }
+
+        .btn-resume {
+            display: inline-block;
+            padding: 10px 25px;
+            background: transparent;
+            color: #00bfff;
+            border: 2px solid #00bfff;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-resume:hover {
+            background: #00bfff;
+            color: #1a1a1a;
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+        }
+
+        /* --- SERVICES GRID --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .service-card {
+            background: #252525;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.4s;
+            border: 1px solid #333;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #00bfff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #00bfff;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+            color: #fff;
         }
 
         /* --- SKILLS --- */
-        .skills {
-            text-align: center;
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
 
-        .skills h2 {
-            display: block;
-            margin: 0 auto 25px auto;
-            border: none;
-            border-bottom: 2px solid #00bfff;
-            width: fit-content;
-        }
-
-        .skills ul {
-            list-style: none;
-            display: inline-block;
-            text-align: left;
-            background: #252525;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 191, 255, 0.1);
-            animation: fadeInUp 1s ease;
-        }
-
-        .skills ul li {
-            transition: transform 0.3s;
-            padding: 5px 0;
-        }
-
-        .skills ul li:hover {
-            transform: translateX(10px);
+        .skill-tag {
+            background: #333;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             color: #00bfff;
+            border: 1px solid #444;
+            transition: 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: #00bfff;
+            color: #1a1a1a;
         }
 
         /* --- PROJECTS --- */
-        .projects {
-            text-align: center;
-        }
-
-        .projects .card {
+        .project-card {
             background: #252525;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            box-shadow: 0 0 10px rgba(0, 191, 255, 0.1);
-            transition: 0.4s ease;
-        }
-
-        .projects .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
-        }
-
-        .projects img {
-            width: 100%;
-            border-radius: 10px;
-            margin-top: 15px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
             transition: 0.3s;
+            border: 1px solid #333;
         }
 
-        .projects img:hover {
-            transform: scale(1.05);
+        .project-card:hover {
+            box-shadow: 0 0 25px rgba(0, 191, 255, 0.2);
+        }
+
+        .project-info {
+            padding: 25px;
+            text-align: left;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* --- CONTACT --- */
-        .contact {
+        .contact-info {
             text-align: center;
+        }
+
+        .contact-item {
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-item i {
+            color: #00bfff;
+            margin-right: 10px;
+            width: 25px;
         }
 
         .social-icons {
-            margin-top: 20px;
-            animation: fadeIn 1.2s ease;
+            margin-top: 30px;
         }
 
         .social-icons a {
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin: 0 15px;
+            color: #888;
             transition: 0.3s;
-            text-decoration: none;
         }
-
-        .social-icons a.tiktok { color: #ff0050; }
-        .social-icons a.telegram { color: #0088cc; }
 
         .social-icons a:hover {
+            color: #00bfff;
             transform: scale(1.2);
-            filter: brightness(1.3);
-            text-shadow: 0 0 15px currentColor;
         }
 
-        /* --- FOOTER --- */
         footer {
-            background: #222;
+            background: #111;
+            padding: 30px;
             text-align: center;
-            padding: 20px;
-            color: #999;
-            font-size: 0.9rem;
-            margin-top: 50px;
+            color: #666;
+            font-size: 0.85rem;
         }
 
         /* --- ANIMATIONS --- */
         @keyframes typing {
             from { width: 0; }
-            to { width: 250px; } /* Adjust width based on name length */
+            to { width: 280px; }
         }
 
         @keyframes blink {
@@ -227,9 +292,13 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes zoomIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.6rem; }
+            @keyframes typing {
+                from { width: 0; }
+                to { width: 220px; }
+            }
         }
     </style>
 </head>
@@ -238,61 +307,110 @@
 
     <header>
         <h1>Gerald Ocate</h1>
-        <p>IT Specialist</p>
+        <p>Experienced IT Specialist</p>
         <nav>
             <a href="#about">About</a>
+            <a href="#services">Services</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
+    <!-- ABOUT SECTION -->
     <section id="about" class="about">
-        <img src="https://github.com/raldohin/geraldocate8-gmail.com/blob/main/37b377e8-1708-4585-a6b0-855df82d7d3d.jpg?raw=true" alt="Profile Photo">
+        <img src="https://github.com/raldohin/geraldocate8-gmail.com/blob/main/37b377e8-1708-4585-a6b0-855df82d7d3d.jpg?raw=true" alt="Gerald Ocate">
         <h2>About Me</h2>
-        <p>Hello! I’m <strong>Gerald Ocate</strong>, an IT Specialist passionate about technology, system optimization, and innovative solutions. I enjoy building efficient systems and helping people get the most out of their digital tools.</p>
+        <p>
+            I am a dedicated <strong>IT Specialist</strong> with a focus on system optimization and technical infrastructure. 
+            From assembling high-performance workstations to restoring complex network connectivity, I bridge the gap between 
+            complex hardware and efficient user workflows.
+        </p>
+        <p>
+            I thrive on troubleshooting "impossible" technical issues and ensuring that digital tools work seamlessly for the people who need them.
+        </p>
+        <a href="#" class="btn-resume"><i class="fas fa-file-download"></i> Download Resume</a>
     </section>
 
-    <section id="skills" class="skills">
-        <h2>Skills</h2>
-        <br>
-        <ul>
-            <li>Network and System Administration</li>
-            <li>Technical Support & Troubleshooting</li>
-            <li>Hardware and Software Installation</li>
-            <li>Web Development Basics</li>
-            <li>Database Management</li>
-        </ul>
-    </section>
-
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="card">
-            <h3>Personal Portfolio Website</h3>
-            <p>Built a responsive and animated personal portfolio showcasing IT expertise, projects, and contact info.</p>
-            <a href="https://github.com/raldohin" target="_blank">
-                <img src="Screenshot 2025-10-31 005708.png" alt="Personal Portfolio Website">
-            </a>
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <h2>What I Do</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-microchip"></i>
+                <h3>Hardware Engineering</h3>
+                <p>PC assembly, component upgrades (CPU/RAM/SSD), and diagnostic repairs for laptops and desktops.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-network-wired"></i>
+                <h3>Network Solutions</h3>
+                <p>Installation and troubleshooting of LAN/WAN, router configurations, and cable management.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-print"></i>
+                <h3>Peripheral Support</h3>
+                <p>Expert maintenance for office equipment, including Epson L-series ink systems and thermal printers.</p>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:geraldocate8@gmail.com" style="color: #00bfff; text-decoration: none;">geraldocate8@gmail.com</a></p>
-        <p>LinkedIn: <a href="#" style="color: #00bfff; text-decoration: none;">linkedin.com/in/geraldocate</a></p>
-        <p>Phone: +63 9935345069</p>
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <span class="skill-tag">System Administration</span>
+            <span class="skill-tag">Hardware Troubleshooting</span>
+            <span class="skill-tag">Network Configuration</span>
+            <span class="skill-tag">Technical Support (L1/L2)</span>
+            <span class="skill-tag">Data Management</span>
+            <span class="skill-tag">Web Development (HTML/CSS)</span>
+            <span class="skill-tag">OS Deployment (Win/Linux)</span>
+            <span class="skill-tag">Database Maintenance</span>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects">
+        <h2>Featured Project</h2>
+        <div class="project-card">
+            <a href="https://github.com/raldohin" target="_blank">
+                <img src="Screenshot 2025-10-31 005708.png" alt="Personal Portfolio Website" onerror="this.src='https://via.placeholder.com/800x400?text=Portfolio+Project+Preview'">
+            </a>
+            <div class="project-info">
+                <h3>Personal Portfolio Website</h3>
+                <p>A responsive, dark-themed portfolio built using HTML5, CSS3, and JavaScript. Features scroll-reveal animations and a mobile-friendly design to showcase IT services and professional expertise.</p>
+                <p style="margin-top:10px; font-size: 0.85rem; color: #00bfff;">Tech Stack: HTML, CSS, JavaScript</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-info">
+        <h2>Get In Touch</h2>
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i> 
+            <a href="mailto:geraldocate8@gmail.com" style="color: inherit; text-decoration: none;">geraldocate8@gmail.com</a>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-phone"></i> +63 993 534 5069
+        </div>
+        <div class="contact-item">
+            <i class="fab fa-linkedin"></i> linkedin.com/in/geraldocate
+        </div>
 
         <div class="social-icons">
-            <a href="https://www.tiktok.com/@geekpump" target="_blank" title="TikTok" class="tiktok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://t.me/geekpum" target="_blank" title="Telegram" class="telegram"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.tiktok.com/@geekpump" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://t.me/geekpum" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="https://github.com/raldohin" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
         </div>
     </section>
 
     <footer>
-        <p>© 2025 Gerald Ocate. All Rights Reserved.</p>
+        <p>&copy; 2025 Gerald Ocate. Designed for Performance & Reliability.</p>
     </footer>
 
     <script>
+        // Reveal elements on scroll
         const sections = document.querySelectorAll("section");
         const revealOnScroll = () => {
             sections.forEach(section => {
@@ -302,8 +420,10 @@
                 }
             });
         };
+        
         window.addEventListener("scroll", revealOnScroll);
-        revealOnScroll(); // Initial check
+        // Run once on load
+        window.onload = revealOnScroll;
     </script>
 
 </body>
